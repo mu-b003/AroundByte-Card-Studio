@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cardstudio.aroundbyte.com/sitemap.xml

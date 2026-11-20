@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AroundByte Card Studio</title>
+<meta name="description" content="Design professional student, employee and institutional ID cards in your browser. Export print-ready PDF and PNG at 300 DPI.">
+<link rel="canonical" href="https://cardstudio.aroundbyte.com/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="AroundByte Card Studio">
+<meta property="og:title" content="AroundByte Card Studio"><meta property="og:description" content="Design professional identity cards in your browser.">
+<link rel="icon" href="assets/aroundbyte-mark.png">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/studio.css">
+<script>try{var th=localStorage.getItem('abcs-theme');if(th)document.documentElement.dataset.theme=th;var lg=localStorage.getItem('abcs-lang');if(lg==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){}</script>
+</head>
+<body>
+<div class="app">
+  <header class="site-header">
+    <a class="brand" href="#gallery" aria-label="AroundByte Card Studio — Home">
+      <img class="brand-logo" src="assets/aroundbyte-mark.png" alt="AroundByte Card Studio">
+    </a>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <details class="tools-dropdown" id="toolsDropdown">
+        <summary id="menuLabel">Card Studio <span class="chevron" aria-hidden="true">⌄</span></summary>
+        <nav id="nav" aria-label="Card Studio"></nav>
+      </details>
+      <a href="about.html" id="aboutNav">About</a>
+      
+      <a href="#settings" id="settingsNav" aria-label="Settings" title="Settings">⚙</a>
+      <button id="lang" class="btn ghost"></button>
+    </nav>
+  </header>
+  <main>
+    <header class="top"><div class="top-copy"><h1 id="title"></h1><p id="desc"></p></div></header>
+    <section id="view"></section>
+    <footer class="app-footer">
+      <span id="privacy"></span>
+      <nav class="app-footer-links" aria-label="Legal and support">
+        <a href="about.html" id="footerAbout">About</a>
+        <a href="privacy.html" id="footerPrivacy">Privacy Policy</a>
+        <a href="terms.html" id="footerTerms">Terms of Use</a>
+        <a href="disclaimer.html" id="footerDisclaimer">Disclaimer</a>
+        <a href="contact.html" id="footerContact">Contact</a>
+      </nav>
+      <span>© <span id="footerYear"></span> AroundByte</span>
+    </footer>
+  </main>
+</div>
+<dialog id="dlg"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="vendor/qrcode.js"></script>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/jszip.min.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

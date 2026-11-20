@@ -1,0 +1,14 @@
+<!doctype html><meta charset=utf-8><link rel=stylesheet href="../css/app.css"><link rel=stylesheet href="../css/studio.css">
+<style>body{background:#222;padding:10px}.g{display:flex;flex-wrap:wrap;gap:10px}canvas{border-radius:6px}.n{color:#fff;font:11px Inter;margin:2px 0}</style>
+<script src="../vendor/qrcode.js"></script><body><div class=g id=g></div>
+<script type=module>
+import {TEMPLATES,CATS} from '../js/templates/index.js';
+import {draw,loadFonts,dims} from '../js/render.js';
+const q=new URLSearchParams(location.search),cat=q.get('cat'),lang=q.get('lang')||'en',orient=q.get('o')||'landscape',pal=q.get('pal')||'p0';
+await loadFonts();
+for(const t of TEMPLATES.filter(t=>!cat||t.cat===cat))for(const side of (q.get('side')?[q.get('side')]:['front','back'])){
+  const {W,H}=dims(orient),px=+(q.get('px')||7),c=document.createElement('canvas');c.width=W*px;c.height=H*px;
+  const s=CATS[t.cat].sample;draw(c.getContext('2d'),{tpl:t,orient,side,px,ph:true,round:true,state:{palette:pal,cardLang:lang,values:{...s[lang]},custom:s.custom}});
+  const d=document.createElement('div');d.innerHTML=`<div class=n>${t.id} ${side}</div>`;d.append(c);g.append(d)}
+document.title='ready';
+</script>
