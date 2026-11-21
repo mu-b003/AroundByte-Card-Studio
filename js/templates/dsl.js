@@ -10,6 +10,8 @@ export const PH=(x,y,w,h,shape='rect',o={})=>({k:'photo',x,y,w,h,shape,...o});
 export const LG=(x,y,w,h,o={})=>({k:'logo',x,y,w,h,...o});
 export const Q=(x,y,s,o={})=>({k:'qr',x,y,s,...o});
 export const B=(x,y,w,h,o={})=>({k:'bar',x,y,w,h,...o});
+export const CA=(x,y,w,h,o={})=>({k:'codearea',x,y,w,h,...o}); // area the code engine fills with QR / barcode (draws nothing itself)
+export const AC=(x,y,r,a0,a1,s,o={})=>({k:'arc',x,y,r,a0,a1,s,...o});
 export const CU=(x,y,w,s,o={})=>({k:'custom',x,y,w,s,...o});
 
 /* Shared back-side builder. style: band | foot | stripe | minimal.  o.qr → QR instead of barcode. o.f = serif/disp heading font */
@@ -25,12 +27,12 @@ export function back(W,H,st,o={}){
     e.push(hd('$terms',t+1.5,x0,cw),T('terms',x0,t+5.5,cw,5,{c:'tx',ml:4,lh:1.35,wt:400}),
       hd('$addr',t+16,x0,cw),T('addr',x0,t+19.5,cw,5.2,{c:'tx',ml:2,lh:1.3}),T('phone',x0,t+27.5,cw,5.4,{c:'tx',wt:600}),
       CU(rx,t+2,cw,5.4,{n:3,gap:5.8}));
-    if(o.qr)e.push(Q(rx,t+20,12.5));else e.push(B(rx,t+22,cw,7,{f:'#111',bg:'#fff'}));
+    e.push(CA(rx,t+20,cw,12.5));if(o.qr)e.push(Q(rx,t+20,12.5));else e.push(B(rx,t+22,cw,7,{f:'#111',bg:'#fff'}));
     e.push(LN(rx,t+33.3,rx+cw,t+33.3,'mu',.25),T('$sig',rx,t+35.4,cw,4.2,{c:'mu',wt:500,al:'center'}))}
   else{e.push(hd('$terms',t+1.5),T('terms',x0,t+5.5,w,5,{c:'tx',ml:5,lh:1.35,wt:400}),
       hd('$addr',t+22),T('addr',x0,t+25.5,w,5.2,{c:'tx',ml:2,lh:1.3}),T('phone',x0,t+33.5,w,5.4,{c:'tx',wt:600}),
       CU(x0,t+37,w,5.4,{n:3,gap:5.8}));
-    if(o.qr)e.push(Q(x0+(w-14)/2,t+54,14));else e.push(B(x0,t+57,w,6.5,{f:'#111',bg:'#fff'}));
+    e.push(CA(x0,t+54,w,14));if(o.qr)e.push(Q(x0+(w-14)/2,t+54,14));else e.push(B(x0,t+57,w,6.5,{f:'#111',bg:'#fff'}));
     e.push(LN(x0,t+69,x0+w,t+69,'mu',.25),T('$sig',x0,t+71,w,4.2,{c:'mu',wt:500,al:'center'}))}
   return e;
 }

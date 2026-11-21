@@ -50,3 +50,17 @@ Upload the contents of this directory to the Cloudflare Pages project configured
 ## Tests
 
 The `tests/` directory contains the original Playwright development scripts. Some scripts reference the original development sandbox paths and test fixtures; adjust those paths before running them in a different environment. Do not treat a test as passed unless it has actually been executed.
+
+## Student ID collection & flexible editor (v2)
+
+**Navigation.** Categories are now grouped (`GROUPS` in `js/templates/core.js`): School Cards (Kindergarten/Preschool, Primary, Secondary, General Student), College/University/Institutions, Employee & Staff. A new category is one `defCat()` call plus `add()` templates — navigation, gallery sections, jump chips and sample data follow automatically. Previews paint lazily.
+
+**Templates.** 24 new student designs (`stages-school.js`, `stages-uni.js`), six per stage, each its own composition. Authored for CR80; other sizes are scaled evenly (never stretched). Every template exposes a front code area (`CA`) so QR/Code 128 are placed by the template itself and cannot overlap content. The 15 original templates render pixel-identically to before.
+
+**Editor.** Per-field show/hide, label, colour, size, font and alignment; custom colours and typeface; photo/logo frame size and position; optional details (printed on the back, personal-data fields flagged); card size (CR80, 90×60, 100×70, custom 30–200 mm).
+
+**Codes.** QR (UTF-8, so Arabic works) and Code 128 are generated locally, black on white with proper quiet zones and integer-pixel modules. Single-sided cards always place enabled codes on the front; double-sided cards choose the side. The editor measures the real module size at 300 DPI and warns when a code would be too small to scan; invalid barcode values block export. A printed code only encodes text — it does not verify identity, grant access or update points.
+
+**Export.** PDF (exact mm page size), PNG (300 DPI header), JPG (300 DPI JFIF), A4 sheets with margin, gap, cards-per-page and crop marks. PDF pages embed 300 DPI raster images.
+
+**Tests.** `tests/e2e-codes-export.py`, `tests/e2e-editor-features.py`, `tests/scan-all-templates.py` (decode exported QR/barcodes with zxing-cpp across every template).

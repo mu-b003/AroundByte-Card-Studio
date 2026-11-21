@@ -1,0 +1,41 @@
+// Strings for the collections / flexible-editor release (English + Arabic).
+import {addStrings} from './i18n.js';
+addStrings({
+ back:'Back',copyLink:'Copy link',linkCopied:'Link copied.',linkFailed:'Could not copy the link.',copyTplLink:'Copy template link',
+ jumpTo:'Jump to a category',cardSize:'Card size',sizeCustom:'Custom size',widthMm:'Width (mm)',heightMm:'Height (mm)',
+ sizeNote:'Designs are drawn for CR80 and scaled evenly to other sizes — never stretched. Check the preview before printing.',
+ showField:'Show on card',hideField:'Hidden on card',fieldStyle:'Style this field',label:'Label',color:'Colour',sizeMul:'Text size',font:'Font',fontDef:'Template default',fontSans:'Sans',fontSerif:'Serif',fontDisp:'Display',
+ align:'Alignment',alDef:'Default',alL:'Left',alC:'Centre',alR:'Right',resetStyle:'Reset',
+ optDetails:'Optional details',optNote:'Optional details are printed in the details block on the back (up to 3 lines). Leave a field empty to leave it off the card.',optSingle:'Optional details are printed on the back. Choose “Double-sided” to include them.',
+ sensitive:'Personal data',sensNote:'Only add personal data that is really needed on the card.',
+ colBg:'Background',colA:'Primary',colC:'Accent',colTx:'Text',colReset:'Reset colours',typeface:'Typeface (whole card)',
+ codesTitle:'QR code & barcode',codeQr:'QR code',codeBar:'Barcode (Code 128)',codeValue:'Encoded value',codeQrPh:'Defaults to the ID number',codeBarPh:'Defaults to the ID number',codeSide:'Print on',codeScale:'Size',codeX:'Move left / right',codeY:'Move up / down',
+ codeSingle:'Single-sided card: enabled codes are placed on the front automatically.',
+ codeNote:'A printed code only contains the text above. It does not verify identity, grant access or update points — that needs your own system.',
+ codeLegacy:'This saved design uses the template’s built-in codes.',codeUpgrade:'Use the new code controls',
+ codeNoArea:'This template has no dedicated code area on this side. Use the move sliders to keep the code clear of other content.',
+ issue_barChars:'The barcode value contains characters Code 128 (set B) cannot encode. Use plain ASCII letters, digits and symbols.',issue_barEmpty:'The barcode is on but has no value.',issue_qrEmpty:'The QR code is on but has no value.',issue_barSmall:'At this size the barcode bars are too thin to scan reliably. Shorten the value, switch off the QR code here, move one code to the back, or use a larger card.',issue_qrSmall:'At this size the QR modules are too small to scan reliably. Enlarge the code or shorten its content.',issue_qrLong:'Long QR content produces a dense code that is hard to scan when small. Shorten it or enlarge the code.',
+ frame:'Frame',frameSize:'Frame size',frameX:'Move left / right',frameY:'Move up / down',editingSide:'Editing: {s}',
+ fmtJpg:'JPG',margin:'Page margin (mm)',gapMm:'Gap (mm)',perPage:'Cards per page',issuesBlock:'Fix the code issues before exporting.',
+ savedNote:'Saved designs (including any photo and details you entered) stay on this device only. Delete them under My Designs when no longer needed.',
+ sizeInfo:'Card size {w} × {h} mm'
+},{
+ back:'رجوع',copyLink:'نسخ الرابط',linkCopied:'تم نسخ الرابط.',linkFailed:'تعذّر نسخ الرابط.',copyTplLink:'نسخ رابط القالب',
+ jumpTo:'انتقل إلى فئة',cardSize:'مقاس البطاقة',sizeCustom:'مقاس مخصص',widthMm:'العرض (مم)',heightMm:'الارتفاع (مم)',
+ sizeNote:'تُرسم التصاميم بمقاس CR80 وتُكبَّر أو تُصغَّر بتناسب ثابت إلى المقاسات الأخرى دون تشويه. راجع المعاينة قبل الطباعة.',
+ showField:'إظهار على البطاقة',hideField:'مخفي على البطاقة',fieldStyle:'تنسيق هذا الحقل',label:'العنوان',color:'اللون',sizeMul:'حجم النص',font:'الخط',fontDef:'افتراضي القالب',fontSans:'بدون حواف',fontSerif:'بحواف',fontDisp:'عناوين',
+ align:'المحاذاة',alDef:'الافتراضية',alL:'يسار',alC:'وسط',alR:'يمين',resetStyle:'إعادة ضبط',
+ optDetails:'تفاصيل اختيارية',optNote:'تُطبع التفاصيل الاختيارية في خانة التفاصيل على الوجه الخلفي (حتى 3 أسطر). اترك الحقل فارغًا لعدم طباعته.',optSingle:'تُطبع التفاصيل الاختيارية على الوجه الخلفي. اختر «وجهان» لتضمينها.',
+ sensitive:'بيانات شخصية',sensNote:'أضف فقط البيانات الشخصية التي تلزم فعلًا على البطاقة.',
+ colBg:'الخلفية',colA:'الأساسي',colC:'التمييز',colTx:'النص',colReset:'إعادة الألوان',typeface:'الخط (للبطاقة كلها)',
+ codesTitle:'رمز QR والباركود',codeQr:'رمز QR',codeBar:'الباركود (Code 128)',codeValue:'القيمة المشفّرة',codeQrPh:'الافتراضي: رقم الهوية',codeBarPh:'الافتراضي: رقم الهوية',codeSide:'الطباعة على',codeScale:'الحجم',codeX:'تحريك يمينًا / يسارًا',codeY:'تحريك لأعلى / لأسفل',
+ codeSingle:'بطاقة بوجه واحد: تُوضع الرموز المفعّلة على الوجه الأمامي تلقائيًا.',
+ codeNote:'الرمز المطبوع يحتوي النص أعلاه فقط. لا يتحقق من الهوية ولا يمنح صلاحية دخول ولا يحدّث النقاط — هذا يتطلب نظامكم الخاص.',
+ codeLegacy:'يستخدم هذا التصميم المحفوظ رموز القالب المدمجة.',codeUpgrade:'استخدام أدوات الرموز الجديدة',
+ codeNoArea:'لا توجد في هذا القالب منطقة مخصصة للرموز على هذا الوجه. استخدم أدوات التحريك لإبعاد الرمز عن بقية المحتوى.',
+ issue_barChars:'قيمة الباركود تحتوي أحرفًا لا يدعمها Code 128 (المجموعة B). استخدم أحرفًا وأرقامًا ورموزًا لاتينية بسيطة.',issue_barEmpty:'الباركود مفعّل لكن بلا قيمة.',issue_qrEmpty:'رمز QR مفعّل لكن بلا قيمة.',issue_barSmall:'بهذا الحجم تكون خطوط الباركود رفيعة جدًا بحيث لا يمكن مسحها بموثوقية. اختصر القيمة أو عطّل رمز QR هنا أو انقل أحد الرمزين إلى الخلف أو استخدم بطاقة أكبر.',issue_qrSmall:'بهذا الحجم تكون وحدات رمز QR صغيرة جدًا بحيث لا يمكن مسحها بموثوقية. كبّر الرمز أو اختصر محتواه.',issue_qrLong:'المحتوى الطويل ينتج رمزًا كثيفًا يصعب مسحه عند صغر حجمه. اختصره أو كبّر الرمز.',
+ frame:'الإطار',frameSize:'حجم الإطار',frameX:'تحريك يمينًا / يسارًا',frameY:'تحريك لأعلى / لأسفل',editingSide:'جارٍ تحرير: {s}',
+ fmtJpg:'JPG',margin:'هامش الصفحة (مم)',gapMm:'المسافة بين البطاقات (مم)',perPage:'عدد البطاقات في الصفحة',issuesBlock:'أصلح مشكلات الرموز قبل التصدير.',
+ savedNote:'تبقى التصاميم المحفوظة (بما فيها الصورة والبيانات التي أدخلتها) على هذا الجهاز فقط. احذفها من «تصاميمي» عند عدم الحاجة إليها.',
+ sizeInfo:'مقاس البطاقة {w} × {h} مم'
+});
